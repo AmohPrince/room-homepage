@@ -10,9 +10,6 @@
   position: relative;
   width: 60%;
 }
-.top-section-right {
-  width: 45%;
-}
 nav {
   position: absolute;
   top: 10%;
@@ -21,13 +18,13 @@ nav {
   align-items: flex-start;
 }
 .nav-links {
-  list-style: none;
-  color: #fff;
   margin-left: 10%;
   width: 40%;
+  color: #fff;
   justify-content: space-between;
 }
 li {
+  list-style: none;
   cursor: pointer;
   border-bottom: 2px solid transparent;
 }
@@ -40,21 +37,28 @@ li:hover {
 .top-section-right {
   padding: 5%;
   position: relative;
+  width: 45%;
 }
 h2 {
   font-size: 2.5rem;
 }
+
 .top-section-right > p {
   margin: 30px 0px;
   color: rgba(184, 184, 184, 255);
   line-height: 20px;
 }
 .shop-now {
-  color: rgba(184, 184, 184, 255);
+  color: #000;
   letter-spacing: 8px;
   word-spacing: 5px;
   margin-right: 20px;
   cursor: pointer;
+  font-weight: 600;
+}
+.shop-now:hover {
+  color: rgba(184, 184, 184, 255);
+  transition: color 200ms linear;
 }
 .img-switchers {
   position: absolute;
@@ -75,4 +79,59 @@ h2 {
 .img-switchers > *:hover {
   background-color: #444444;
   transition: background-color 200ms linear;
+}
+.hamburger {
+  display: none;
+}
+.small-screen {
+  position: absolute;
+  width: 100%;
+}
+.small-screen-menu {
+  padding: 50px 20px;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 14vh;
+}
+.small-screen-nav-links {
+  margin: 0 auto;
+}
+.small-screen-nav-links li {
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.smallScreen-overlay {
+  height: calc(100vh - 14vh);
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 200ms linear;
+}
+@media screen and (max-width: 650px) {
+  .hamburger {
+    display: inline-block;
+  }
+  .nav-links {
+    display: none;
+  }
+  .logo {
+    margin: 0 auto;
+  }
+  .top-section {
+    flex-direction: column;
+  }
+  .top-section-right,
+  .top-section-left {
+    height: unset;
+    width: 100%;
+  }
+  .top-section-left {
+    height: 800px;
+  }
+  .img-switchers {
+    top: 0;
+    right: 0;
+    left: unset;
+    transform: translate(0%, -100%);
+    width: 30%;
+  }
 }
